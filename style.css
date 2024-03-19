@@ -1,0 +1,33 @@
+/** variables */
+:root {
+  --main-color: #57acdc;
+  --main-text-color: #939393;
+  --alt-text-color: #e5e5e5;
+  --main-bg-color: #1e1e1e;
+  --alt-bg-color: #121212;
+}
+
+/** general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+}
+
+/** main  */
+.main-container {
+  display: grid;
+  grid-template-columns: 250px auto;
+  grid-template-rows: 100vh;
+  grid-template-areas: "sidebar main";
+}
+
+/** sidebar */
+.sidebar {
+  grid-area: "sidebar";
+  background-color: var(--alt-bg-color);
+}
