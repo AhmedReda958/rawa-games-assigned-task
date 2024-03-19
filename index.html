@@ -52,27 +52,33 @@
         </aside>
         <main>
             <header>
-                <nav>
+                <nav class="navbar">
                     <div class="search-bar">
-                        <label for="search-input"></label>
-                        <input type="text" id="search-input">
-                        <div class="search-filter">filter</div>
+                        <img src="/assets/icons/search-normal.svg" alt="search icon" width="24" height="24">
+                        <input type="search" name="search" placeholder="Search for file, folder, shared storehouse">
+                        <div class="search-filter"><img src="/assets/icons/setting.svg" alt="search setting" width="24"
+                                height="24"></div>
                     </div>
                     <div class="upload">
                         <label for="upload-input">
-                            drag and drop
-                            <span>files</span>,<span>folders</span>or<span>links</span>
+                            <img src="/assets/icons/cloud-cross.svg" alt="upload icon" width="24" height="24">
+                            drag and drop &nbsp;
+                            <span>files</span>,&nbsp;<span>folders </span>&nbsp; or &nbsp;<span>links</span>
+                            <input type="file" name="file" id="upload-input" hidden>
                         </label>
-                        <input type="file" name="file" id="upload-input">
                     </div>
-                    <div>
-                        <div>link</div>
-                        <div>profile</div>
+                    <div class="profile">
+
+                        <img src="/assets/icons/link.svg" alt="link icon" width="24" height="24">
+
+                        <div class="profile_link">
+                            <img src="/assets/icons/profile.svg" alt="notification icon" width="19" height="19">
+                        </div>
                     </div>
                 </nav>
                 <div class="user-info">
                     <h2>Ramy Main Drive</h2>
-                    <i>info</i>
+                    <img src="/assets/icons/info.svg" alt="info icon">
                 </div>
             </header>
         </main>
