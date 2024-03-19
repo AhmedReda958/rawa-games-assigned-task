@@ -6,22 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Droppex</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div class="main-container">
         <aside class="sidebar">
-            <h1>Droppex</h1>
-            <button> New folder</button>
+            <div class="logo">
+
+                <img src="/assets/imgs/logo.svg" alt="logo" height="35px">
+            </div>
+            <div>
+                <button class="new-folder-btn">
+                    <img src="/assets/icons/folder-add.svg" alt="">
+                    New folder</button>
+            </div>
             <ul>
-                <li>Home</li>
-                <li>Trash</li>
+                <li class="active"><img src="/assets/icons/category.svg" alt="home icon"> Home</li>
+                <li> <img src="/assets/icons/trash.svg" alt="trash icon">Trash</li>
             </ul>
             <div class="storage">
-                <div>Storage</div>
+                <div class="title"><img src="/assets/icons/cloud.svg" alt=""> Storage</div>
                 <div class="progress">
-                    10%
-                    <div>10GB / 100GB</div>
+                    <div class="progress-bar">
+                        <div class="percent">
+                            10%
+                        </div>
+                        <svg viewBox="0 0 250 250">
+                            <circle class="bg" cx="125" cy="125" r="115" fill="none" stroke-width="20">
+                            </circle>
+                            <circle class="fg" cx="125" cy="125" r="115" fill="none" stroke="#5394fd" stroke-width="20"
+                                stroke-dasharray="100 1250">
+                            </circle>
+                        </svg>
+                    </div>
+                    <div class="inGB">10GB / 100GB</div>
                 </div>
             </div>
         </aside>

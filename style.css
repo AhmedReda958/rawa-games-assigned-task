@@ -1,4 +1,4 @@
-/** variables */
+/******************************************** variables ****************************************/
 :root {
   --main-color: #57acdc;
   --main-text-color: #939393;
@@ -7,7 +7,7 @@
   --alt-bg-color: #121212;
 }
 
-/** general */
+/********************************************* general ******************************************/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,6 +16,7 @@
 body {
   color: var(--main-text-color);
   background-color: var(--main-bg-color);
+  font-family: Poppins;
 }
 
 /** main  */
@@ -26,8 +27,105 @@ body {
   grid-template-areas: "sidebar main";
 }
 
-/** sidebar */
+/************************************** sidebar *****************************************/
 .sidebar {
   grid-area: "sidebar";
   background-color: var(--alt-bg-color);
+}
+.sidebar > div {
+  padding: 30px;
+  padding-bottom: 0;
+}
+.sidebar .new-folder-btn {
+  width: 128px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.sidebar .new-folder-btn:hover {
+  filter: brightness(1.1);
+}
+/* navigation links */
+.sidebar ul {
+  padding: 30px 0;
+  list-style: none;
+  border-bottom: var(--main-bg-color) 1px solid;
+}
+.sidebar li {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  padding: 15px 30px;
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+}
+.sidebar li.active {
+  position: relative;
+  color: var(--main-color);
+}
+.sidebar li.active::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 32px;
+  top: 12px;
+  left: 0;
+  border-radius: 0px 5px 5px 0px;
+  background-color: var(--main-color);
+}
+/* storage section */
+.sidebar .storage .title {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+}
+.sidebar .storage .progress {
+  width: 170px;
+  height: 200px;
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 10px;
+  background-color: var(--main-bg-color);
+}
+.sidebar .progress-bar {
+  position: relative;
+}
+.sidebar .storage .progress-bar circle.fg {
+  transform: rotate(-90deg);
+  transform-origin: 125px 125px;
+  stroke: var(--main-color);
+}
+.sidebar .storage .progress-bar circle.bg {
+  stroke: var(--alt-bg-color);
+}
+.sidebar .storage .progress-bar .percent {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.5px;
+}
+
+.sidebar .storage .progress .inGB {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
 }
