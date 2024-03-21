@@ -230,3 +230,72 @@ header .user-info h2 {
 header .user-info img {
   cursor: pointer;
 }
+/****************************************** files filter ******************************************/
+.files .filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-top: 2px solid #fafafa11;
+}
+.files .filter .info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 5px 0;
+  padding-inline-end: 10px;
+}
+.files .filter .filter-buttons {
+  display: flex;
+}
+.files .filter .filter-buttons > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  padding-bottom: 8px;
+}
+.files .filter .filter-buttons img {
+  width: 20px;
+  height: 20px;
+}
+.files .filter .filter-buttons .sorting {
+  width: 80px;
+  border-right: 1px solid #fafafa11;
+  border-left: 1px solid #fafafa11;
+}
+.files .filter .filter-buttons .other {
+  min-width: 150px;
+}
+/****************************************** files table ******************************************/
+.files table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.files table tr {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20px repeat(5, 1fr);
+}
+
+.files table th {
+  grid-area: auto;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--main-text-color);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--main-text-color);
+}
+.files table td {
+  padding: 16px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--alt-text-color);
+  border-bottom: 1px solid var(--main-bg-color);
+}
