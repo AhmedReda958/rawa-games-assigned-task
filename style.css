@@ -112,13 +112,15 @@ input[type="checkbox"]:checked {
 .sidebar li.active::before {
   content: "";
   position: absolute;
-  width: 7px;
+  width: 14px;
   height: 32px;
-  top: 12px;
-  left: 0;
-  border-radius: 0px 5px 5px 0px;
+  top: 11px;
+  left: -7px;
+  right: -7px;
+  border-radius: 5px;
   background-color: var(--main-color);
 }
+
 /* storage section */
 .sidebar .storage .title {
   font-family: Poppins;
@@ -437,6 +439,7 @@ header .user-info img {
   border-radius: 100%;
   background-color: #57acdc;
   top: 50%;
+  right: 9px;
   left: 9px;
   transform: translateY(-50%);
 }
