@@ -21,14 +21,20 @@ body {
 
 /** main  */
 .main-container {
+  height: 100vh;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 250px auto;
-  grid-template-rows: 100vh;
+  grid-template-rows: 100%;
   grid-template-areas: "sidebar main";
 }
 main {
   padding: 30px;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
+
 /** common */
 input[type="checkbox"] {
   width: 20px;
@@ -283,8 +289,13 @@ header .user-info img {
   min-width: 150px;
 }
 /****************************************** files table ******************************************/
+
+.files {
+  height: 100%;
+}
 .files table {
   width: 100%;
+  height: 100%;
 }
 /* tabel header */
 .files table thead {
@@ -292,6 +303,7 @@ header .user-info img {
   display: block;
   border-radius: 10px;
   border: none;
+  padding-inline-end: 20px;
 }
 .files table tr {
   width: 100%;
@@ -304,8 +316,27 @@ header .user-info img {
   align-items: center;
 }
 .files table tbody {
+  display: block;
   height: 100%;
   overflow-y: scroll;
+}
+/* style scroll bar */
+.files table tbody {
+  padding-inline-end: 10px;
+  margin-top: 6px;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--alt-bg-color);
+}
+.files table tbody::-webkit-scrollbar {
+  background-color: rgba(23, 23, 23, 1);
+  width: 8px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.files table tbody::-webkit-scrollbar-thumb {
+  background: #121212;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
 .files table tbody tr {
@@ -319,19 +350,24 @@ header .user-info img {
   background-color: rgba(17, 17, 17, 0.699);
 }
 
-/* table header */
+.files table th,
+.files table td {
+  text-align: inherit;
+  grid-area: auto;
+  width: 100%;
+}
+/** table header */
 .files table th {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: var(--main-text-color);
 }
-.files table th,
-.files table td {
-  text-align: inherit;
-  grid-area: auto;
-  width: 100%;
-  padding-inline-start: 20px;
+
+.files table th.last-modified {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /* table data */
 .files table td {
@@ -350,6 +386,7 @@ header .user-info img {
   display: flex;
   align-items: center;
   color: var(--alt-text-color);
+  padding-inline-start: 20px;
 }
 .files table .file-name > div {
   max-width: 160px;
