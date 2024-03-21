@@ -303,6 +303,10 @@ header .user-info img {
     minmax(66px, 140px) minmax(232px, 1fr);
   align-items: center;
 }
+.files table tbody {
+  height: 100%;
+  overflow-y: scroll;
+}
 
 .files table tbody tr {
   cursor: pointer;
@@ -311,7 +315,8 @@ header .user-info img {
   background-color: rgba(139, 139, 139, 0.06);
 }
 .files table tbody tr:hover {
-  background-color: rgba(139, 139, 139, 0.034);
+  transition: background ease-out 0.1s;
+  background-color: rgba(17, 17, 17, 0.699);
 }
 
 /* table header */
@@ -344,16 +349,16 @@ header .user-info img {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 5px;
   color: var(--alt-text-color);
 }
-.files table .file-name span {
-  max-width: 205px;
+.files table .file-name > div {
+  max-width: 160px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .files table .file-name img {
+  margin-inline-end: 5px;
   width: 24px;
   height: 24px;
 }
@@ -367,4 +372,10 @@ header .user-info img {
   top: 50%;
   left: 9px;
   transform: translateY(-50%);
+}
+.files table .last-modified div {
+  max-width: 232px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
