@@ -29,6 +29,19 @@ body {
 main {
   padding: 30px;
 }
+/** common */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  background-color: var(--main-bg-color);
+  border-radius: 4px;
+  border: 1px solid var(--main-text-color);
+  cursor: pointer;
+}
+input[type="checkbox"]:checked {
+  appearance: auto;
+}
 
 /************************************** sidebar *****************************************/
 .sidebar {
@@ -235,7 +248,6 @@ header .user-info img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
   border-top: 2px solid #fafafa11;
 }
 .files .filter .info {
@@ -260,6 +272,7 @@ header .user-info img {
 .files .filter .filter-buttons img {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 .files .filter .filter-buttons .sorting {
   width: 80px;
@@ -272,30 +285,81 @@ header .user-info img {
 /****************************************** files table ******************************************/
 .files table {
   width: 100%;
-  border-collapse: collapse;
+}
+/* tabel header */
+.files table thead {
+  background-color: var(--alt-bg-color);
+  display: block;
+  border-radius: 10px;
+  border: none;
 }
 .files table tr {
   width: 100%;
+  border-radius: 10px;
   display: grid;
-  grid-template-columns: 20px repeat(5, 1fr);
+  grid-template-columns:
+    40px minmax(205px, 1.5fr) minmax(140px, 1fr) minmax(50px, 110px)
+    minmax(66px, 140px) minmax(232px, 1fr);
+  gap: 20px;
 }
 
+.files table tbody tr {
+  cursor: pointer;
+}
+.files table tbody tr:nth-child(even) {
+  background-color: rgba(139, 139, 139, 0.06);
+}
+.files table tbody tr:hover {
+  background-color: rgba(139, 139, 139, 0.034);
+}
+
+/* table header */
 .files table th {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--main-text-color);
+}
+.files table th,
+.files table td {
+  text-align: inherit;
   grid-area: auto;
   width: 100%;
-  text-align: left;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 18px;
-  color: var(--main-text-color);
-  padding: 16px 0;
-  border-bottom: 1px solid var(--main-text-color);
+  padding-top: 16px;
+  padding-bottom: 10px;
 }
+/* table data */
 .files table td {
-  padding: 16px 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
+}
+
+/*** table content  */
+.files table .checkbox {
+  text-align: center;
+  padding-inline-start: 20px;
+}
+.files table .file-name {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
   color: var(--alt-text-color);
-  border-bottom: 1px solid var(--main-bg-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.files table .file-name img {
+  width: 24px;
+  height: 24px;
+}
+.files table .file-name.active::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: #57acdc;
+  top: 50%;
+  left: -10px;
 }
