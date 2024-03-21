@@ -24,7 +24,7 @@ body {
   height: 100vh;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 250px auto;
+  grid-template-columns: minmax(100px, 250px) auto;
   grid-template-rows: 100%;
   grid-template-areas: "sidebar main";
 }
@@ -33,6 +33,15 @@ main {
   overflow-y: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
+}
+
+@media (max-width: 992px) {
+  .main-container {
+    grid-template-columns: auto;
+  }
+  main {
+    padding: 15px;
+  }
 }
 
 /** common */
@@ -53,6 +62,11 @@ input[type="checkbox"]:checked {
 .sidebar {
   grid-area: "sidebar";
   background-color: var(--alt-bg-color);
+}
+@media (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
 }
 .sidebar > div {
   padding: 30px;
@@ -155,11 +169,19 @@ input[type="checkbox"]:checked {
 /****************************************** navbar *******************************************/
 .navbar {
   display: grid;
-  height: 48px;
+  min-height: 48px;
   grid-template-columns: 4fr 3fr 90px;
   grid-template-rows: none;
   grid-template-areas: "search upload profile";
   gap: 24px;
+}
+@media (max-width: 768px) {
+  .navbar {
+    grid-template-columns: 4fr 60px 90px;
+  }
+  .navbar .upload label > div {
+    display: none;
+  }
 }
 /* search bar */
 .navbar .search-bar {
@@ -232,6 +254,7 @@ input[type="checkbox"]:checked {
   justify-content: center;
   background-color: #57acdc11;
   border-radius: 100%;
+  cursor: pointer;
 }
 /* user info section */
 header .user-info {
@@ -239,6 +262,7 @@ header .user-info {
   justify-content: space-between;
   align-items: center;
   height: 70px;
+  cursor: pointer;
 }
 header .user-info h2 {
   font-size: 18px;
@@ -375,6 +399,12 @@ header .user-info img {
   font-weight: 400;
 }
 
+@media (max-width: 992px) {
+  .files table th,
+  .files table td {
+    font-size: 12px;
+  }
+}
 /*** table content  */
 .files table .checkbox {
   text-align: center;
